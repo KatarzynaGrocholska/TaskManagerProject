@@ -136,30 +136,16 @@ loadDataToTab(FILE_NAME);
             }
             return Integer.parseInt(n);
         }
-        private static void removeTask (String[][]tasks,int n) {
-
-
-
-
-                if (n < tasks.length) {
-                    for (int i = 0; i < tasks.length; i++) {
-                        if (tasks[i].equals(n)) {
+        private static void removeTask (String[][]tab,int n) {
 
                             try {
-                                tasks = ArrayUtils.removeElement(tasks, n);
-
-
+                                if (n < tab.length) {
+                                    tasks = ArrayUtils.remove(tab, n);
+                                }
                             } catch (ArrayIndexOutOfBoundsException ex) {
                                 System.out.println("Element not exist in file");
                             }
                         }
-
-                    }
-                }
-            }
-
-
-
         public static void saveFile (String FILE_NAME, String[][]tasks){
 
             Path dir = Paths.get(FILE_NAME);
